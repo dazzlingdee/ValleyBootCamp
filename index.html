@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <div>
+        {% if user is defined %}
+            <h1>TRAVEL HUNT {{ user }}</h1>
+        {% else %}
+            <h1>Discover the new WORLD</h1>
+        {% endif %}
+    </div>
+    {% if error is defined %}
+        <div>
+            <h1>{{ error }}</h1>
+        </div>
+    {% else %}
+        <div>
+            <form action="/productcreate/" method="post">
+                <label>Enter the destination:</label><br>
+                <input name="product_name" type="text"/>
+                <br><br>
+                <input type="submit" action="/productlist/">
+            </form>
+        </div>
+        <h4><a href = "/productlist/">V</a></h4>
+        <h6><a href = "/">go back to home page</a></h6>
+        <div>{{ msg }}</div>
+    {% endif %}
+</body>
+</html>
